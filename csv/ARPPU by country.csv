@@ -1,0 +1,11 @@
+country,"ROUND(sum(totalPrice)/count(distinct player_id),2)"
+Brazil,21.22
+Bulgaria,9.31
+China,35.78
+Croatia,22.92
+France,24.48
+Germany,15.67
+India,18.48
+Japan,175.7
+Philippines,25.62
+"United States",10.98
