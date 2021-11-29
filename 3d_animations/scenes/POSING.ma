@@ -1,6 +1,6 @@
 //Maya ASCII 2020 scene
 //Name: POSING.ma
-//Last modified: Sun, Nov 28, 2021 08:00:08 PM
+//Last modified: Sun, Nov 28, 2021 08:53:41 PM
 //Codeset: 1252
 file -rdi 1 -ns "stewart_shot_ready_anim" -rfn "stewart_shot_ready_animRN" -op
 		 "v=0;" -typ "mayaAscii" "D:/GitHubProjects/3D_Animation_Folder/3d_animations/assets/stewart_v04/stewart_shot_ready_anim.ma";
@@ -8,23 +8,26 @@ file -r -ns "stewart_shot_ready_anim" -dr 1 -rfn "stewart_shot_ready_animRN" -op
 		 "v=0;" -typ "mayaAscii" "D:/GitHubProjects/3D_Animation_Folder/3d_animations/assets/stewart_v04/stewart_shot_ready_anim.ma";
 requires maya "2020";
 requires "stereoCamera" "10.0";
+requires "stereoCamera" "10.0";
+requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOptions" -nodeType "mentalrayGlobals"
+		 -nodeType "mentalrayItemsList" -dataType "byteArray" "Mayatomr" "2015.0 - 3.12.1.12 ";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "201911140446-42a737a01c";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 19043)\n";
-fileInfo "UUID" "FB1462B8-4E08-AE08-3338-1FB1029D46B2";
+fileInfo "UUID" "8C65F328-401B-CDDF-5ED2-81A15258FC83";
 createNode transform -s -n "persp";
 	rename -uid "19B093F2-4C6F-6DD9-3632-AC9379FE063D";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -19.588826426109691 90.783231507999602 483.93564709649638 ;
-	setAttr ".r" -type "double3" 2.0616472699884314 353.00000000035141 0 ;
+	setAttr ".t" -type "double3" 148.9415690668888 224.53851064484491 459.98222685253421 ;
+	setAttr ".r" -type "double3" -14.138352729714509 1093.8000000000648 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "6DB10ECD-4727-22EE-45C5-55AEF15EBE67";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 477.29012629664237;
+	setAttr ".coi" 477.29012629681495;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -77,11 +80,11 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "B8C23AC2-468A-5C2F-B9EF-D9A15BDF59CD";
+	rename -uid "8D8DEDE0-4FE7-23C9-0D78-20BB42F0F362";
 	setAttr -s 6 ".lnk";
 	setAttr -s 6 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "95879746-45D8-1510-2565-5DA56E94F1BD";
+	rename -uid "6B2D89CA-4E02-79D4-E547-B996FEF8B113";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 36 0 1 2 3 4
 		 5 6 7 8 9 10 11 12 13 14 15 16
 		 17 18 19 20 21 22 23 24 25 26 27 28
@@ -89,13 +92,13 @@ createNode shapeEditorManager -n "shapeEditorManager";
 	setAttr -s 36 ".bspr";
 	setAttr -s 36 ".obsv";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "7BA703C8-4D0A-DF53-F8C8-8C9A73179A77";
+	rename -uid "EECEC7F6-494A-2F5C-8055-F7932B5B401B";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "29216248-4E47-9F67-FF42-EE8AADDE0071";
+	rename -uid "F5639EE5-43E3-2D35-1D07-2C9916B86456";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "95E96380-4EA6-DB32-3A2B-06BDCA56A6A5";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "17BFAB03-4FF7-0BBF-00AA-678C5C1032B0";
+	rename -uid "FA1947D8-46B2-1E3E-82C4-B3A7EF36F12D";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "B836165A-419E-D845-143C-E5AE9C7FC7B2";
 	setAttr ".g" yes;
@@ -336,8 +339,10 @@ createNode reference -n "stewart_shot_ready_animRN";
 	setAttr ".phl[232]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"stewart_shot_ready_animRN"
-		"stewart_shot_ready_animRN" 0
-		"stewart_shot_ready_animRN" 382
+		"stewart_shot_ready_animRN" 1
+		2 "stewart_shot_ready_anim:stw_body_skinCluster" "lw[0:104]" " -s 105 0 0 0 0 0"
+		
+		"stewart_shot_ready_animRN" 380
 		2 "|stewart_shot_ready_anim:stw_grp" "visibility" " 1"
 		2 "|stewart_shot_ready_anim:stw_grp" "translate" " -type \"double3\" 0 0 0"
 		
@@ -351,11 +356,11 @@ createNode reference -n "stewart_shot_ready_animRN";
 		"rotate" " -type \"double3\" 9.54583297737532988 -4.41382786111563874 15.45731878091365097"
 		
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_head_rig_grp|stewart_shot_ready_anim:stw_head_fk_ctrl_Grp|stewart_shot_ready_anim:stw_head_ctrl_frzGrp|stewart_shot_ready_anim:stw_head_ctrl" 
-		"rotateZ" " -av"
-		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_head_rig_grp|stewart_shot_ready_anim:stw_head_fk_ctrl_Grp|stewart_shot_ready_anim:stw_head_ctrl_frzGrp|stewart_shot_ready_anim:stw_head_ctrl" 
 		"rotateX" " -av"
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_head_rig_grp|stewart_shot_ready_anim:stw_head_fk_ctrl_Grp|stewart_shot_ready_anim:stw_head_ctrl_frzGrp|stewart_shot_ready_anim:stw_head_ctrl" 
 		"rotateY" " -av"
+		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_head_rig_grp|stewart_shot_ready_anim:stw_head_fk_ctrl_Grp|stewart_shot_ready_anim:stw_head_ctrl_frzGrp|stewart_shot_ready_anim:stw_head_ctrl" 
+		"rotateZ" " -av"
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_leg_rig_grp|stewart_shot_ready_anim:stw_lf_legPvCtrlGrp_space_grp|stewart_shot_ready_anim:stw_lf_knee_pv_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_knee_pv_ctrl" 
 		"translate" " -type \"double3\" 10.39524897644297674 0 -1.27637608095150767"
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_leg_rig_grp|stewart_shot_ready_anim:stw_lf_legPvCtrlGrp_space_grp|stewart_shot_ready_anim:stw_lf_knee_pv_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_knee_pv_ctrl" 
@@ -381,9 +386,9 @@ createNode reference -n "stewart_shot_ready_animRN";
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_leg_rig_grp|stewart_shot_ready_anim:stw_rt_legIkCtrl_space_grp|stewart_shot_ready_anim:stw_rt_heel_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_foot_ik_ctrl" 
 		"translateX" " -av"
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_leg_rig_grp|stewart_shot_ready_anim:stw_rt_legIkCtrl_space_grp|stewart_shot_ready_anim:stw_rt_heel_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_foot_ik_ctrl" 
-		"translateZ" " -av"
-		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_leg_rig_grp|stewart_shot_ready_anim:stw_rt_legIkCtrl_space_grp|stewart_shot_ready_anim:stw_rt_heel_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_foot_ik_ctrl" 
 		"translateY" " -av"
+		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_leg_rig_grp|stewart_shot_ready_anim:stw_rt_legIkCtrl_space_grp|stewart_shot_ready_anim:stw_rt_heel_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_foot_ik_ctrl" 
+		"translateZ" " -av"
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_leg_rig_grp|stewart_shot_ready_anim:stw_rt_legIkCtrl_space_grp|stewart_shot_ready_anim:stw_rt_heel_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_foot_ik_ctrl" 
 		"rotate" " -type \"double3\" 0 -20.41498215290040363 0"
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_leg_rig_grp|stewart_shot_ready_anim:stw_rt_legIkCtrl_space_grp|stewart_shot_ready_anim:stw_rt_heel_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_foot_ik_ctrl" 
@@ -420,13 +425,13 @@ createNode reference -n "stewart_shot_ready_animRN";
 		"translate" " -type \"double3\" -31.83099773736692129 -44.65472388092816658 10.15343093297037846"
 		
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_arm_rig_grp|stewart_shot_ready_anim:stw_lf_armIkCtrl_space_grp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl" 
-		"translateZ" " -av"
+		"translateX" " -av"
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_arm_rig_grp|stewart_shot_ready_anim:stw_lf_armIkCtrl_space_grp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl" 
 		"translateY" " -av"
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_arm_rig_grp|stewart_shot_ready_anim:stw_lf_armIkCtrl_space_grp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl" 
-		"translateX" " -av"
+		"translateZ" " -av"
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_arm_rig_grp|stewart_shot_ready_anim:stw_lf_armIkCtrl_space_grp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl" 
-		"rotate" " -type \"double3\" -24.23472477421756466 -1.94041678730988609 -40.17938310960965254"
+		"rotate" " -type \"double3\" -24.23472477421756821 -1.94041678730988609 -40.17938310960965254"
 		
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_arm_rig_grp|stewart_shot_ready_anim:stw_lf_armIkCtrl_space_grp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl" 
 		"rotateX" " -av"
@@ -434,8 +439,6 @@ createNode reference -n "stewart_shot_ready_animRN";
 		"rotateY" " -av"
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_arm_rig_grp|stewart_shot_ready_anim:stw_lf_armIkCtrl_space_grp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl" 
 		"rotateZ" " -av"
-		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_arm_rig_grp|stewart_shot_ready_anim:stw_lf_armIkCtrl_space_grp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl" 
-		"space" " -k 1"
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_arm_rig_grp|stewart_shot_ready_anim:stw_rt_clavicle_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_clavicle_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_clavicle_ctrl" 
 		"translate" " -type \"double3\" 0.6085178580702939 -3.94884896513395134 0.19051999099845573"
 		
@@ -461,9 +464,9 @@ createNode reference -n "stewart_shot_ready_animRN";
 		"translate" " -type \"double3\" -75.8324093767496521 -15.74743000000002269 3.29491317782392201"
 		
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_arm_rig_grp|stewart_shot_ready_anim:stw_rt_armPvCtrlGrp_space_grp|stewart_shot_ready_anim:stw_rt_elbow_pv_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_elbow_pv_ctrl" 
-		"translateY" " -av"
-		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_arm_rig_grp|stewart_shot_ready_anim:stw_rt_armPvCtrlGrp_space_grp|stewart_shot_ready_anim:stw_rt_elbow_pv_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_elbow_pv_ctrl" 
 		"translateX" " -av"
+		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_arm_rig_grp|stewart_shot_ready_anim:stw_rt_armPvCtrlGrp_space_grp|stewart_shot_ready_anim:stw_rt_elbow_pv_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_elbow_pv_ctrl" 
+		"translateY" " -av"
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_arm_rig_grp|stewart_shot_ready_anim:stw_rt_armPvCtrlGrp_space_grp|stewart_shot_ready_anim:stw_rt_elbow_pv_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_elbow_pv_ctrl" 
 		"translateZ" " -av"
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_arm_rig_grp|stewart_shot_ready_anim:stw_rt_armIkCtrl_space_grp|stewart_shot_ready_anim:stw_rt_arm_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_arm_ik_ctrl" 
@@ -476,7 +479,7 @@ createNode reference -n "stewart_shot_ready_animRN";
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_arm_rig_grp|stewart_shot_ready_anim:stw_rt_armIkCtrl_space_grp|stewart_shot_ready_anim:stw_rt_arm_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_arm_ik_ctrl" 
 		"translateZ" " -av"
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_arm_rig_grp|stewart_shot_ready_anim:stw_rt_armIkCtrl_space_grp|stewart_shot_ready_anim:stw_rt_arm_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_arm_ik_ctrl" 
-		"rotate" " -type \"double3\" 14.09524994862171354 173.45721933665760162 86.63698512311164279"
+		"rotate" " -type \"double3\" 14.09524994862171532 173.45721933665760162 86.63698512311164279"
 		
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_arm_rig_grp|stewart_shot_ready_anim:stw_rt_armIkCtrl_space_grp|stewart_shot_ready_anim:stw_rt_arm_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_arm_ik_ctrl" 
 		"rotateX" " -av"
@@ -484,8 +487,6 @@ createNode reference -n "stewart_shot_ready_animRN";
 		"rotateY" " -av"
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_arm_rig_grp|stewart_shot_ready_anim:stw_rt_armIkCtrl_space_grp|stewart_shot_ready_anim:stw_rt_arm_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_arm_ik_ctrl" 
 		"rotateZ" " -av"
-		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_arm_rig_grp|stewart_shot_ready_anim:stw_rt_armIkCtrl_space_grp|stewart_shot_ready_anim:stw_rt_arm_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_arm_ik_ctrl" 
-		"space" " -k 1"
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_hand_rig_grp|stewart_shot_ready_anim:stw_lf_pinkyBase_fk_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_pinkyBase_fk_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_pinkyBase_fk_ctrl" 
 		"rotate" " -type \"double3\" 0 36.944266877277947 0"
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_hand_rig_grp|stewart_shot_ready_anim:stw_lf_pinkyBase_fk_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_pinkyBase_fk_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_pinkyBase_fk_ctrl" 
@@ -501,7 +502,7 @@ createNode reference -n "stewart_shot_ready_animRN";
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_hand_rig_grp|stewart_shot_ready_anim:stw_rt_indexBase_fk_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_indexBase_fk_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_indexBase_fk_ctrl" 
 		"rotateY" " -av"
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_hand_rig_grp|stewart_shot_ready_anim:stw_rt_indexMid_fk_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_indexMid_fk_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_indexMid_fk_ctrl" 
-		"rotate" " -type \"double3\" -0.60775416646924607 46.22181926524441309 -0.23416571021597993"
+		"rotate" " -type \"double3\" -0.60775416646924607 46.22181926524442019 -0.23416571021597993"
 		
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_hand_rig_grp|stewart_shot_ready_anim:stw_rt_indexMid_fk_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_indexMid_fk_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_indexMid_fk_ctrl" 
 		"rotateX" " -av"
@@ -547,7 +548,7 @@ createNode reference -n "stewart_shot_ready_animRN";
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_head_setup_grp|stewart_shot_ready_anim:stw_HEAD_FINAL_DEFORM_grp|stewart_shot_ready_anim:stw_HEAD_ONMESH_CONTROLS_grp|stewart_shot_ready_anim:stw_hair_controls_grp|stewart_shot_ready_anim:stw_hair_front_controls_grp|stewart_shot_ready_anim:stw_hair_front_1_ctrl_grp|stewart_shot_ready_anim:stw_hair_front_1_ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_head_setup_grp|stewart_shot_ready_anim:stw_HEAD_FINAL_DEFORM_grp|stewart_shot_ready_anim:stw_HEAD_ONMESH_CONTROLS_grp|stewart_shot_ready_anim:stw_hair_controls_grp|stewart_shot_ready_anim:stw_hair_mid_controls_grp|stewart_shot_ready_anim:stw_hair_mid_1_ctrl_grp|stewart_shot_ready_anim:stw_hair_mid_1_ctrl|stewart_shot_ready_anim:stw_hair_mid_2_ctrl_grp|stewart_shot_ready_anim:stw_hair_mid_2_ctrl" 
-		"rotate" " -type \"double3\" 0 0 -13.0874644735862411"
+		"rotate" " -type \"double3\" 0 0 -13.08746447358624287"
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_head_setup_grp|stewart_shot_ready_anim:stw_HEAD_FINAL_DEFORM_grp|stewart_shot_ready_anim:stw_HEAD_ONMESH_CONTROLS_grp|stewart_shot_ready_anim:stw_hair_controls_grp|stewart_shot_ready_anim:stw_hair_mid_controls_grp|stewart_shot_ready_anim:stw_hair_mid_1_ctrl_grp|stewart_shot_ready_anim:stw_hair_mid_1_ctrl|stewart_shot_ready_anim:stw_hair_mid_2_ctrl_grp|stewart_shot_ready_anim:stw_hair_mid_2_ctrl" 
 		"rotateZ" " -av"
 		2 "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_head_setup_grp|stewart_shot_ready_anim:stw_HEAD_FINAL_DEFORM_grp|stewart_shot_ready_anim:stw_HEAD_ONMESH_CONTROLS_grp|stewart_shot_ready_anim:stw_hair_controls_grp|stewart_shot_ready_anim:stw_hair_mid_controls_grp|stewart_shot_ready_anim:stw_hair_mid_1_ctrl_grp|stewart_shot_ready_anim:stw_hair_mid_1_ctrl|stewart_shot_ready_anim:stw_hair_mid_2_ctrl_grp|stewart_shot_ready_anim:stw_hair_mid_2_ctrl|stewart_shot_ready_anim:stw_hair_mid_3_ctrl_grp|stewart_shot_ready_anim:stw_hair_mid_3_ctrl" 
@@ -640,27 +641,27 @@ createNode reference -n "stewart_shot_ready_animRN";
 		"stewart_shot_ready_animRN.placeHolderList[2]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_head_rig_grp|stewart_shot_ready_anim:stw_neck_fk_ctrl_Grp|stewart_shot_ready_anim:stw_neck_ctrl_frzGrp|stewart_shot_ready_anim:stw_neck_ctrl_frzGrp|stewart_shot_ready_anim:stw_neck_ctrl.translateZ" 
 		"stewart_shot_ready_animRN.placeHolderList[3]" ""
-		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_head_rig_grp|stewart_shot_ready_anim:stw_neck_fk_ctrl_Grp|stewart_shot_ready_anim:stw_neck_ctrl_frzGrp|stewart_shot_ready_anim:stw_neck_ctrl_frzGrp|stewart_shot_ready_anim:stw_neck_ctrl.rotateZ" 
-		"stewart_shot_ready_animRN.placeHolderList[4]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_head_rig_grp|stewart_shot_ready_anim:stw_neck_fk_ctrl_Grp|stewart_shot_ready_anim:stw_neck_ctrl_frzGrp|stewart_shot_ready_anim:stw_neck_ctrl_frzGrp|stewart_shot_ready_anim:stw_neck_ctrl.rotateX" 
-		"stewart_shot_ready_animRN.placeHolderList[5]" ""
+		"stewart_shot_ready_animRN.placeHolderList[4]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_head_rig_grp|stewart_shot_ready_anim:stw_neck_fk_ctrl_Grp|stewart_shot_ready_anim:stw_neck_ctrl_frzGrp|stewart_shot_ready_anim:stw_neck_ctrl_frzGrp|stewart_shot_ready_anim:stw_neck_ctrl.rotateY" 
+		"stewart_shot_ready_animRN.placeHolderList[5]" ""
+		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_head_rig_grp|stewart_shot_ready_anim:stw_neck_fk_ctrl_Grp|stewart_shot_ready_anim:stw_neck_ctrl_frzGrp|stewart_shot_ready_anim:stw_neck_ctrl_frzGrp|stewart_shot_ready_anim:stw_neck_ctrl.rotateZ" 
 		"stewart_shot_ready_animRN.placeHolderList[6]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_head_rig_grp|stewart_shot_ready_anim:stw_neck_fk_ctrl_Grp|stewart_shot_ready_anim:stw_neck_ctrl_frzGrp|stewart_shot_ready_anim:stw_neck_ctrl_frzGrp|stewart_shot_ready_anim:stw_neck_ctrl.followAlign" 
 		"stewart_shot_ready_animRN.placeHolderList[7]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_head_rig_grp|stewart_shot_ready_anim:stw_head_fk_ctrl_Grp|stewart_shot_ready_anim:stw_head_ctrl_frzGrp|stewart_shot_ready_anim:stw_head_ctrl.followAlign" 
 		"stewart_shot_ready_animRN.placeHolderList[8]" ""
-		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_head_rig_grp|stewart_shot_ready_anim:stw_head_fk_ctrl_Grp|stewart_shot_ready_anim:stw_head_ctrl_frzGrp|stewart_shot_ready_anim:stw_head_ctrl.translateX" 
-		"stewart_shot_ready_animRN.placeHolderList[9]" ""
-		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_head_rig_grp|stewart_shot_ready_anim:stw_head_fk_ctrl_Grp|stewart_shot_ready_anim:stw_head_ctrl_frzGrp|stewart_shot_ready_anim:stw_head_ctrl.translateY" 
-		"stewart_shot_ready_animRN.placeHolderList[10]" ""
-		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_head_rig_grp|stewart_shot_ready_anim:stw_head_fk_ctrl_Grp|stewart_shot_ready_anim:stw_head_ctrl_frzGrp|stewart_shot_ready_anim:stw_head_ctrl.translateZ" 
-		"stewart_shot_ready_animRN.placeHolderList[11]" ""
-		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_head_rig_grp|stewart_shot_ready_anim:stw_head_fk_ctrl_Grp|stewart_shot_ready_anim:stw_head_ctrl_frzGrp|stewart_shot_ready_anim:stw_head_ctrl.rotateZ" 
-		"stewart_shot_ready_animRN.placeHolderList[12]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_head_rig_grp|stewart_shot_ready_anim:stw_head_fk_ctrl_Grp|stewart_shot_ready_anim:stw_head_ctrl_frzGrp|stewart_shot_ready_anim:stw_head_ctrl.rotateX" 
-		"stewart_shot_ready_animRN.placeHolderList[13]" ""
+		"stewart_shot_ready_animRN.placeHolderList[9]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_head_rig_grp|stewart_shot_ready_anim:stw_head_fk_ctrl_Grp|stewart_shot_ready_anim:stw_head_ctrl_frzGrp|stewart_shot_ready_anim:stw_head_ctrl.rotateY" 
+		"stewart_shot_ready_animRN.placeHolderList[10]" ""
+		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_head_rig_grp|stewart_shot_ready_anim:stw_head_fk_ctrl_Grp|stewart_shot_ready_anim:stw_head_ctrl_frzGrp|stewart_shot_ready_anim:stw_head_ctrl.rotateZ" 
+		"stewart_shot_ready_animRN.placeHolderList[11]" ""
+		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_head_rig_grp|stewart_shot_ready_anim:stw_head_fk_ctrl_Grp|stewart_shot_ready_anim:stw_head_ctrl_frzGrp|stewart_shot_ready_anim:stw_head_ctrl.translateX" 
+		"stewart_shot_ready_animRN.placeHolderList[12]" ""
+		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_head_rig_grp|stewart_shot_ready_anim:stw_head_fk_ctrl_Grp|stewart_shot_ready_anim:stw_head_ctrl_frzGrp|stewart_shot_ready_anim:stw_head_ctrl.translateY" 
+		"stewart_shot_ready_animRN.placeHolderList[13]" ""
+		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_head_rig_grp|stewart_shot_ready_anim:stw_head_fk_ctrl_Grp|stewart_shot_ready_anim:stw_head_ctrl_frzGrp|stewart_shot_ready_anim:stw_head_ctrl.translateZ" 
 		"stewart_shot_ready_animRN.placeHolderList[14]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_leg_rig_grp|stewart_shot_ready_anim:stw_lf_legPvCtrlGrp_space_grp|stewart_shot_ready_anim:stw_lf_knee_pv_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_knee_pv_ctrl.space" 
 		"stewart_shot_ready_animRN.placeHolderList[15]" ""
@@ -696,9 +697,9 @@ createNode reference -n "stewart_shot_ready_animRN";
 		"stewart_shot_ready_animRN.placeHolderList[30]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_leg_rig_grp|stewart_shot_ready_anim:stw_lf_legIkCtrl_space_grp|stewart_shot_ready_anim:stw_lf_heel_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_foot_ik_ctrl.translateZ" 
 		"stewart_shot_ready_animRN.placeHolderList[31]" ""
-		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_leg_rig_grp|stewart_shot_ready_anim:stw_lf_legIkCtrl_space_grp|stewart_shot_ready_anim:stw_lf_heel_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_foot_ik_ctrl.rotateY" 
-		"stewart_shot_ready_animRN.placeHolderList[32]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_leg_rig_grp|stewart_shot_ready_anim:stw_lf_legIkCtrl_space_grp|stewart_shot_ready_anim:stw_lf_heel_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_foot_ik_ctrl.rotateX" 
+		"stewart_shot_ready_animRN.placeHolderList[32]" ""
+		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_leg_rig_grp|stewart_shot_ready_anim:stw_lf_legIkCtrl_space_grp|stewart_shot_ready_anim:stw_lf_heel_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_foot_ik_ctrl.rotateY" 
 		"stewart_shot_ready_animRN.placeHolderList[33]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_leg_rig_grp|stewart_shot_ready_anim:stw_lf_legIkCtrl_space_grp|stewart_shot_ready_anim:stw_lf_heel_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_foot_ik_ctrl.rotateZ" 
 		"stewart_shot_ready_animRN.placeHolderList[34]" ""
@@ -754,13 +755,13 @@ createNode reference -n "stewart_shot_ready_animRN";
 		"stewart_shot_ready_animRN.placeHolderList[59]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_leg_rig_grp|stewart_shot_ready_anim:stw_rt_legIkCtrl_space_grp|stewart_shot_ready_anim:stw_rt_heel_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_foot_ik_ctrl.translateX" 
 		"stewart_shot_ready_animRN.placeHolderList[60]" ""
-		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_leg_rig_grp|stewart_shot_ready_anim:stw_rt_legIkCtrl_space_grp|stewart_shot_ready_anim:stw_rt_heel_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_foot_ik_ctrl.translateZ" 
-		"stewart_shot_ready_animRN.placeHolderList[61]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_leg_rig_grp|stewart_shot_ready_anim:stw_rt_legIkCtrl_space_grp|stewart_shot_ready_anim:stw_rt_heel_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_foot_ik_ctrl.translateY" 
+		"stewart_shot_ready_animRN.placeHolderList[61]" ""
+		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_leg_rig_grp|stewart_shot_ready_anim:stw_rt_legIkCtrl_space_grp|stewart_shot_ready_anim:stw_rt_heel_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_foot_ik_ctrl.translateZ" 
 		"stewart_shot_ready_animRN.placeHolderList[62]" ""
-		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_leg_rig_grp|stewart_shot_ready_anim:stw_rt_legIkCtrl_space_grp|stewart_shot_ready_anim:stw_rt_heel_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_foot_ik_ctrl.rotateY" 
-		"stewart_shot_ready_animRN.placeHolderList[63]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_leg_rig_grp|stewart_shot_ready_anim:stw_rt_legIkCtrl_space_grp|stewart_shot_ready_anim:stw_rt_heel_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_foot_ik_ctrl.rotateX" 
+		"stewart_shot_ready_animRN.placeHolderList[63]" ""
+		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_leg_rig_grp|stewart_shot_ready_anim:stw_rt_legIkCtrl_space_grp|stewart_shot_ready_anim:stw_rt_heel_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_foot_ik_ctrl.rotateY" 
 		"stewart_shot_ready_animRN.placeHolderList[64]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_leg_rig_grp|stewart_shot_ready_anim:stw_rt_legIkCtrl_space_grp|stewart_shot_ready_anim:stw_rt_heel_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_foot_ik_ctrl.rotateZ" 
 		"stewart_shot_ready_animRN.placeHolderList[65]" ""
@@ -824,11 +825,11 @@ createNode reference -n "stewart_shot_ready_animRN";
 		"stewart_shot_ready_animRN.placeHolderList[94]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_arm_rig_grp|stewart_shot_ready_anim:stw_lf_armIkCtrl_space_grp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl.maxStretch" 
 		"stewart_shot_ready_animRN.placeHolderList[95]" ""
-		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_arm_rig_grp|stewart_shot_ready_anim:stw_lf_armIkCtrl_space_grp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl.translateZ" 
+		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_arm_rig_grp|stewart_shot_ready_anim:stw_lf_armIkCtrl_space_grp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl.translateX" 
 		"stewart_shot_ready_animRN.placeHolderList[96]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_arm_rig_grp|stewart_shot_ready_anim:stw_lf_armIkCtrl_space_grp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl.translateY" 
 		"stewart_shot_ready_animRN.placeHolderList[97]" ""
-		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_arm_rig_grp|stewart_shot_ready_anim:stw_lf_armIkCtrl_space_grp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl.translateX" 
+		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_arm_rig_grp|stewart_shot_ready_anim:stw_lf_armIkCtrl_space_grp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl.translateZ" 
 		"stewart_shot_ready_animRN.placeHolderList[98]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_lf_arm_rig_grp|stewart_shot_ready_anim:stw_lf_armIkCtrl_space_grp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl_frzGrp|stewart_shot_ready_anim:stw_lf_arm_ik_ctrl.rotateX" 
 		"stewart_shot_ready_animRN.placeHolderList[99]" ""
@@ -850,9 +851,9 @@ createNode reference -n "stewart_shot_ready_animRN";
 		"stewart_shot_ready_animRN.placeHolderList[107]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_arm_rig_grp|stewart_shot_ready_anim:stw_rt_armPvCtrlGrp_space_grp|stewart_shot_ready_anim:stw_rt_elbow_pv_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_elbow_pv_ctrl.space" 
 		"stewart_shot_ready_animRN.placeHolderList[108]" ""
-		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_arm_rig_grp|stewart_shot_ready_anim:stw_rt_armPvCtrlGrp_space_grp|stewart_shot_ready_anim:stw_rt_elbow_pv_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_elbow_pv_ctrl.translateY" 
-		"stewart_shot_ready_animRN.placeHolderList[109]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_arm_rig_grp|stewart_shot_ready_anim:stw_rt_armPvCtrlGrp_space_grp|stewart_shot_ready_anim:stw_rt_elbow_pv_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_elbow_pv_ctrl.translateX" 
+		"stewart_shot_ready_animRN.placeHolderList[109]" ""
+		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_arm_rig_grp|stewart_shot_ready_anim:stw_rt_armPvCtrlGrp_space_grp|stewart_shot_ready_anim:stw_rt_elbow_pv_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_elbow_pv_ctrl.translateY" 
 		"stewart_shot_ready_animRN.placeHolderList[110]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_rig_grp|stewart_shot_ready_anim:stw_rt_arm_rig_grp|stewart_shot_ready_anim:stw_rt_armPvCtrlGrp_space_grp|stewart_shot_ready_anim:stw_rt_elbow_pv_ctrl_frzGrp|stewart_shot_ready_anim:stw_rt_elbow_pv_ctrl.translateZ" 
 		"stewart_shot_ready_animRN.placeHolderList[111]" ""
@@ -1046,17 +1047,17 @@ createNode reference -n "stewart_shot_ready_animRN";
 		"stewart_shot_ready_animRN.placeHolderList[205]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_spine_rig_grp|stewart_shot_ready_anim:COGCtrl_grp|stewart_shot_ready_anim:BB_cog_ctrl_const_grp|stewart_shot_ready_anim:stw_COG_ctrl.breath" 
 		"stewart_shot_ready_animRN.placeHolderList[206]" ""
-		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_spine_rig_grp|stewart_shot_ready_anim:COGCtrl_grp|stewart_shot_ready_anim:BB_cog_ctrl_const_grp|stewart_shot_ready_anim:stw_COG_ctrl.rotateX" 
-		"stewart_shot_ready_animRN.placeHolderList[207]" ""
-		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_spine_rig_grp|stewart_shot_ready_anim:COGCtrl_grp|stewart_shot_ready_anim:BB_cog_ctrl_const_grp|stewart_shot_ready_anim:stw_COG_ctrl.rotateY" 
-		"stewart_shot_ready_animRN.placeHolderList[208]" ""
-		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_spine_rig_grp|stewart_shot_ready_anim:COGCtrl_grp|stewart_shot_ready_anim:BB_cog_ctrl_const_grp|stewart_shot_ready_anim:stw_COG_ctrl.rotateZ" 
-		"stewart_shot_ready_animRN.placeHolderList[209]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_spine_rig_grp|stewart_shot_ready_anim:COGCtrl_grp|stewart_shot_ready_anim:BB_cog_ctrl_const_grp|stewart_shot_ready_anim:stw_COG_ctrl.translateX" 
-		"stewart_shot_ready_animRN.placeHolderList[210]" ""
+		"stewart_shot_ready_animRN.placeHolderList[207]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_spine_rig_grp|stewart_shot_ready_anim:COGCtrl_grp|stewart_shot_ready_anim:BB_cog_ctrl_const_grp|stewart_shot_ready_anim:stw_COG_ctrl.translateY" 
-		"stewart_shot_ready_animRN.placeHolderList[211]" ""
+		"stewart_shot_ready_animRN.placeHolderList[208]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_spine_rig_grp|stewart_shot_ready_anim:COGCtrl_grp|stewart_shot_ready_anim:BB_cog_ctrl_const_grp|stewart_shot_ready_anim:stw_COG_ctrl.translateZ" 
+		"stewart_shot_ready_animRN.placeHolderList[209]" ""
+		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_spine_rig_grp|stewart_shot_ready_anim:COGCtrl_grp|stewart_shot_ready_anim:BB_cog_ctrl_const_grp|stewart_shot_ready_anim:stw_COG_ctrl.rotateX" 
+		"stewart_shot_ready_animRN.placeHolderList[210]" ""
+		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_spine_rig_grp|stewart_shot_ready_anim:COGCtrl_grp|stewart_shot_ready_anim:BB_cog_ctrl_const_grp|stewart_shot_ready_anim:stw_COG_ctrl.rotateY" 
+		"stewart_shot_ready_animRN.placeHolderList[211]" ""
+		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_spine_rig_grp|stewart_shot_ready_anim:COGCtrl_grp|stewart_shot_ready_anim:BB_cog_ctrl_const_grp|stewart_shot_ready_anim:stw_COG_ctrl.rotateZ" 
 		"stewart_shot_ready_animRN.placeHolderList[212]" ""
 		5 4 "stewart_shot_ready_animRN" "|stewart_shot_ready_anim:stw_grp|stewart_shot_ready_anim:stw_rig_all_grp|stewart_shot_ready_anim:stw_head_setup_grp|stewart_shot_ready_anim:stw_HEAD_FINAL_DEFORM_grp|stewart_shot_ready_anim:stw_HEAD_ONMESH_CONTROLS_grp|stewart_shot_ready_anim:stw_hair_controls_grp|stewart_shot_ready_anim:stw_hair_mid_controls_grp|stewart_shot_ready_anim:stw_hair_mid_1_ctrl_grp|stewart_shot_ready_anim:stw_hair_mid_1_ctrl|stewart_shot_ready_anim:stw_hair_mid_2_ctrl_grp|stewart_shot_ready_anim:stw_hair_mid_2_ctrl.translateX" 
 		"stewart_shot_ready_animRN.placeHolderList[213]" ""
@@ -1174,7 +1175,7 @@ createNode animCurveTA -n "stw_lf_arm_ik_ctrl_rotateX";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 5 ".ktv[0:4]"  1 20.738982984164799 10 -18.413562277373778
-		 15 -18.413562277373778 25 5.1262736241153464 35 -24.234724774217565;
+		 15 -18.413562277373778 25 5.1262736241153464 35 -24.234724774217568;
 createNode animCurveTA -n "stw_lf_arm_ik_ctrl_rotateY";
 	rename -uid "F3364A05-4A80-F188-2ADA-30A052F21F29";
 	setAttr ".tan" 18;
@@ -1185,7 +1186,7 @@ createNode animCurveTA -n "stw_lf_arm_ik_ctrl_rotateZ";
 	rename -uid "0E11F54F-4693-0A53-D2F0-BDB77CB43B73";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 -102.71789688256133 10 -68.373690650655675
+	setAttr -s 5 ".ktv[0:4]"  1 -102.71789688256135 10 -68.373690650655675
 		 15 -68.373690650655675 25 -23.212583381970909 35 -40.179383109609653;
 createNode animCurveTU -n "stw_lf_arm_ik_ctrl_armTwist";
 	rename -uid "AF0D903B-4BA2-204F-38B2-F2AC54FDB23D";
@@ -1610,13 +1611,13 @@ createNode animCurveTA -n "stw_rt_arm_ik_ctrl_rotateX";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 5 ".ktv[0:4]"  1 -9.1026991494910021 10 5.6932069860113952
-		 15 5.6932069860113952 25 -21.658792912633263 35 14.095249948621714;
+		 15 5.6932069860113952 25 -21.658792912633263 35 14.095249948621715;
 createNode animCurveTA -n "stw_rt_arm_ik_ctrl_rotateY";
 	rename -uid "FB2641CA-426F-21C9-CB95-FDBF8D56CAD4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 4.4403643942346278 10 44.536265896772228
-		 15 44.536265896772228 25 72.193962975415388 35 173.4572193366576;
+	setAttr -s 5 ".ktv[0:4]"  1 4.4403643942346278 10 44.536265896772235
+		 15 44.536265896772235 25 72.193962975415388 35 173.4572193366576;
 createNode animCurveTA -n "stw_rt_arm_ik_ctrl_rotateZ";
 	rename -uid "B726A179-4FB8-E704-9DF1-4A97FC059FB1";
 	setAttr ".tan" 18;
@@ -1822,7 +1823,7 @@ createNode animCurveTA -n "stw_rt_indexMid_fk_ctrl_rotateY";
 	rename -uid "957ABC4D-4F74-9C41-DC31-7497A018EE82";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  10 10.287635932385657 25 46.221819265244413;
+	setAttr -s 2 ".ktv[0:1]"  10 10.287635932385657 25 46.22181926524442;
 createNode animCurveTA -n "stw_rt_indexMid_fk_ctrl_rotateZ";
 	rename -uid "E2A74D0A-4807-C9B8-DD25-65BCC0BD4FE9";
 	setAttr ".tan" 18;
@@ -2003,7 +2004,7 @@ createNode animCurveTA -n "stw_hair_mid_3_ctrl_rotateZ";
 	rename -uid "ACFF90E8-4395-124B-AC55-CB99865C9FCE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 10 -27.489626731077994 15 48.118631812806562
+	setAttr -s 4 ".ktv[0:3]"  1 0 10 -27.489626731077994 15 48.118631812806569
 		 25 -11.19821830514603;
 createNode animCurveTU -n "stw_hair_mid_3_ctrl_scaleX";
 	rename -uid "4ACDF426-49FF-AAB3-90BC-0A812CDFB354";
@@ -2035,7 +2036,7 @@ createNode animCurveTA -n "stw_hair_mid_2_ctrl_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 4 ".ktv[0:3]"  1 0 10 -11.140748975832819 15 13.484019177270092
-		 25 -13.087464473586241;
+		 25 -13.087464473586243;
 createNode animCurveTU -n "stw_hair_mid_2_ctrl_visibility";
 	rename -uid "225E311E-41BD-0222-521E-D6AC8705BA46";
 	setAttr ".tan" 9;
@@ -2364,6 +2365,347 @@ createNode animCurveTU -n "stw_rt_thumbMid_fk_ctrl_scaleZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr ".ktv[0]"  25 1;
+createNode mentalrayItemsList -s -n "mentalrayItemsList";
+	rename -uid "F839D97B-46FB-7C8D-F35D-F3AE7BF1A0DF";
+createNode mentalrayGlobals -s -n "mentalrayGlobals";
+	rename -uid "FF810EA5-4B8E-37E7-CCDC-13AE09C33290";
+createNode mentalrayOptions -s -n "miDefaultOptions";
+	rename -uid "B3D9BC65-41B7-5FFB-B358-E2ACB62B111E";
+	addAttr -ci true -m -sn "stringOptions" -ln "stringOptions" -at "compound" -nc 
+		3;
+	addAttr -ci true -sn "name" -ln "name" -dt "string" -p "stringOptions";
+	addAttr -ci true -sn "value" -ln "value" -dt "string" -p "stringOptions";
+	addAttr -ci true -sn "type" -ln "type" -dt "string" -p "stringOptions";
+	setAttr -s 28 ".stringOptions";
+	setAttr ".stringOptions[0].name" -type "string" "rast motion factor";
+	setAttr ".stringOptions[0].value" -type "string" "1.0";
+	setAttr ".stringOptions[0].type" -type "string" "scalar";
+	setAttr ".stringOptions[1].name" -type "string" "rast transparency depth";
+	setAttr ".stringOptions[1].value" -type "string" "8";
+	setAttr ".stringOptions[1].type" -type "string" "integer";
+	setAttr ".stringOptions[2].name" -type "string" "rast useopacity";
+	setAttr ".stringOptions[2].value" -type "string" "true";
+	setAttr ".stringOptions[2].type" -type "string" "boolean";
+	setAttr ".stringOptions[3].name" -type "string" "importon";
+	setAttr ".stringOptions[3].value" -type "string" "false";
+	setAttr ".stringOptions[3].type" -type "string" "boolean";
+	setAttr ".stringOptions[4].name" -type "string" "importon density";
+	setAttr ".stringOptions[4].value" -type "string" "1.0";
+	setAttr ".stringOptions[4].type" -type "string" "scalar";
+	setAttr ".stringOptions[5].name" -type "string" "importon merge";
+	setAttr ".stringOptions[5].value" -type "string" "0.0";
+	setAttr ".stringOptions[5].type" -type "string" "scalar";
+	setAttr ".stringOptions[6].name" -type "string" "importon trace depth";
+	setAttr ".stringOptions[6].value" -type "string" "0";
+	setAttr ".stringOptions[6].type" -type "string" "integer";
+	setAttr ".stringOptions[7].name" -type "string" "importon traverse";
+	setAttr ".stringOptions[7].value" -type "string" "true";
+	setAttr ".stringOptions[7].type" -type "string" "boolean";
+	setAttr ".stringOptions[8].name" -type "string" "shadowmap pixel samples";
+	setAttr ".stringOptions[8].value" -type "string" "3";
+	setAttr ".stringOptions[8].type" -type "string" "integer";
+	setAttr ".stringOptions[9].name" -type "string" "ambient occlusion";
+	setAttr ".stringOptions[9].value" -type "string" "false";
+	setAttr ".stringOptions[9].type" -type "string" "boolean";
+	setAttr ".stringOptions[10].name" -type "string" "ambient occlusion rays";
+	setAttr ".stringOptions[10].value" -type "string" "256";
+	setAttr ".stringOptions[10].type" -type "string" "integer";
+	setAttr ".stringOptions[11].name" -type "string" "ambient occlusion cache";
+	setAttr ".stringOptions[11].value" -type "string" "false";
+	setAttr ".stringOptions[11].type" -type "string" "boolean";
+	setAttr ".stringOptions[12].name" -type "string" "ambient occlusion cache density";
+	setAttr ".stringOptions[12].value" -type "string" "1.0";
+	setAttr ".stringOptions[12].type" -type "string" "scalar";
+	setAttr ".stringOptions[13].name" -type "string" "ambient occlusion cache points";
+	setAttr ".stringOptions[13].value" -type "string" "64";
+	setAttr ".stringOptions[13].type" -type "string" "integer";
+	setAttr ".stringOptions[14].name" -type "string" "irradiance particles";
+	setAttr ".stringOptions[14].value" -type "string" "false";
+	setAttr ".stringOptions[14].type" -type "string" "boolean";
+	setAttr ".stringOptions[15].name" -type "string" "irradiance particles rays";
+	setAttr ".stringOptions[15].value" -type "string" "256";
+	setAttr ".stringOptions[15].type" -type "string" "integer";
+	setAttr ".stringOptions[16].name" -type "string" "irradiance particles interpolate";
+	setAttr ".stringOptions[16].value" -type "string" "1";
+	setAttr ".stringOptions[16].type" -type "string" "integer";
+	setAttr ".stringOptions[17].name" -type "string" "irradiance particles interppoints";
+	setAttr ".stringOptions[17].value" -type "string" "64";
+	setAttr ".stringOptions[17].type" -type "string" "integer";
+	setAttr ".stringOptions[18].name" -type "string" "irradiance particles indirect passes";
+	setAttr ".stringOptions[18].value" -type "string" "0";
+	setAttr ".stringOptions[18].type" -type "string" "integer";
+	setAttr ".stringOptions[19].name" -type "string" "irradiance particles scale";
+	setAttr ".stringOptions[19].value" -type "string" "1.0";
+	setAttr ".stringOptions[19].type" -type "string" "scalar";
+	setAttr ".stringOptions[20].name" -type "string" "irradiance particles env";
+	setAttr ".stringOptions[20].value" -type "string" "true";
+	setAttr ".stringOptions[20].type" -type "string" "boolean";
+	setAttr ".stringOptions[21].name" -type "string" "irradiance particles env rays";
+	setAttr ".stringOptions[21].value" -type "string" "256";
+	setAttr ".stringOptions[21].type" -type "string" "integer";
+	setAttr ".stringOptions[22].name" -type "string" "irradiance particles env scale";
+	setAttr ".stringOptions[22].value" -type "string" "1";
+	setAttr ".stringOptions[22].type" -type "string" "integer";
+	setAttr ".stringOptions[23].name" -type "string" "irradiance particles rebuild";
+	setAttr ".stringOptions[23].value" -type "string" "true";
+	setAttr ".stringOptions[23].type" -type "string" "boolean";
+	setAttr ".stringOptions[24].name" -type "string" "irradiance particles file";
+	setAttr ".stringOptions[24].value" -type "string" "";
+	setAttr ".stringOptions[24].type" -type "string" "string";
+	setAttr ".stringOptions[25].name" -type "string" "geom displace motion factor";
+	setAttr ".stringOptions[25].value" -type "string" "1.0";
+	setAttr ".stringOptions[25].type" -type "string" "scalar";
+	setAttr ".stringOptions[26].name" -type "string" "contrast all buffers";
+	setAttr ".stringOptions[26].value" -type "string" "true";
+	setAttr ".stringOptions[26].type" -type "string" "boolean";
+	setAttr ".stringOptions[27].name" -type "string" "finalgather normal tolerance";
+	setAttr ".stringOptions[27].value" -type "string" "25.842";
+	setAttr ".stringOptions[27].type" -type "string" "scalar";
+	setAttr ".splck" 1;
+	setAttr ".fil" 0;
+	setAttr ".rflr" 1;
+	setAttr ".rfrr" 1;
+	setAttr ".maxr" 2;
+	setAttr ".shrd" 2;
+createNode mentalrayFramebuffer -s -n "miDefaultFramebuffer";
+	rename -uid "7739760C-446B-320C-5B88-2B8C95EB214E";
+	setAttr ".dat" 2;
+createNode mentalrayOptions -s -n "miContourPreset";
+	rename -uid "91E64242-4861-C316-DBA8-8C99F108CF73";
+	setAttr ".splck" 1;
+	setAttr ".fil" 0;
+	setAttr ".rflr" 1;
+	setAttr ".rfrr" 1;
+	setAttr ".maxr" 1;
+	setAttr ".shrd" 2;
+createNode mentalrayOptions -s -n "Draft";
+	rename -uid "67838CB3-4D6E-A520-CD03-869EA23D15DD";
+	setAttr ".splck" 1;
+	setAttr ".fil" 0;
+	setAttr ".rflr" 1;
+	setAttr ".rfrr" 1;
+	setAttr ".maxr" 2;
+	setAttr ".shrd" 2;
+createNode mentalrayOptions -s -n "DraftMotionBlur";
+	rename -uid "32D65647-4175-DA6C-517A-20AD294A3502";
+	setAttr ".splck" 1;
+	setAttr ".fil" 0;
+	setAttr ".rflr" 1;
+	setAttr ".rfrr" 1;
+	setAttr ".maxr" 2;
+	setAttr ".shrd" 2;
+	setAttr ".mb" 1;
+	setAttr ".tconr" 1;
+	setAttr ".tcong" 1;
+	setAttr ".tconb" 1;
+	setAttr ".tcona" 1;
+createNode mentalrayOptions -s -n "DraftRapidMotion";
+	rename -uid "3C5585AC-4349-F71F-B903-D585C7C97FA1";
+	setAttr ".splck" 1;
+	setAttr ".fil" 0;
+	setAttr ".scan" 3;
+	setAttr ".rapc" 1;
+	setAttr ".raps" 0.25;
+	setAttr ".rflr" 1;
+	setAttr ".rfrr" 1;
+	setAttr ".maxr" 2;
+	setAttr ".shrd" 2;
+	setAttr ".mb" 1;
+	setAttr ".tconr" 1;
+	setAttr ".tcong" 1;
+	setAttr ".tconb" 1;
+	setAttr ".tcona" 1;
+createNode mentalrayOptions -s -n "Preview";
+	rename -uid "B00C83A4-43E8-4DA1-35F6-1B8915A9A90A";
+	setAttr ".splck" 1;
+	setAttr ".minsp" -1;
+	setAttr ".maxsp" 1;
+	setAttr ".fil" 1;
+	setAttr ".rflr" 2;
+	setAttr ".rfrr" 2;
+	setAttr ".maxr" 4;
+	setAttr ".shrd" 2;
+createNode mentalrayOptions -s -n "PreviewMotionblur";
+	rename -uid "85A138C7-42E4-FC08-8A2E-F9A978A0C348";
+	setAttr ".splck" 1;
+	setAttr ".minsp" -1;
+	setAttr ".maxsp" 1;
+	setAttr ".fil" 1;
+	setAttr ".rflr" 2;
+	setAttr ".rfrr" 2;
+	setAttr ".maxr" 4;
+	setAttr ".shrd" 2;
+	setAttr ".mb" 1;
+	setAttr ".tconr" 0.5;
+	setAttr ".tcong" 0.5;
+	setAttr ".tconb" 0.5;
+	setAttr ".tcona" 0.5;
+createNode mentalrayOptions -s -n "PreviewRapidMotion";
+	rename -uid "3D1764DC-4FBA-6212-8D4B-E0BF3233531E";
+	setAttr ".splck" 1;
+	setAttr ".minsp" -1;
+	setAttr ".maxsp" 1;
+	setAttr ".fil" 1;
+	setAttr ".scan" 3;
+	setAttr ".rapc" 3;
+	setAttr ".rflr" 2;
+	setAttr ".rfrr" 2;
+	setAttr ".maxr" 4;
+	setAttr ".shrd" 2;
+	setAttr ".mb" 1;
+	setAttr ".tconr" 0.5;
+	setAttr ".tcong" 0.5;
+	setAttr ".tconb" 0.5;
+	setAttr ".tcona" 0.5;
+createNode mentalrayOptions -s -n "PreviewCaustics";
+	rename -uid "07542B1A-49C0-DB03-0652-788ACA9BF358";
+	setAttr ".splck" 1;
+	setAttr ".minsp" -1;
+	setAttr ".maxsp" 1;
+	setAttr ".fil" 1;
+	setAttr ".rflr" 2;
+	setAttr ".rfrr" 2;
+	setAttr ".maxr" 4;
+	setAttr ".shrd" 2;
+	setAttr ".ca" 1;
+	setAttr ".cc" 1;
+	setAttr ".cr" 1;
+createNode mentalrayOptions -s -n "PreviewGlobalIllum";
+	rename -uid "8E2796C9-4A7F-D55E-A0B4-5ABF0AAE3833";
+	setAttr ".splck" 1;
+	setAttr ".minsp" -1;
+	setAttr ".maxsp" 1;
+	setAttr ".fil" 1;
+	setAttr ".rflr" 2;
+	setAttr ".rfrr" 2;
+	setAttr ".maxr" 4;
+	setAttr ".shrd" 2;
+	setAttr ".gi" 1;
+	setAttr ".gc" 1;
+	setAttr ".gr" 1;
+createNode mentalrayOptions -s -n "PreviewFinalGather";
+	rename -uid "E99AA7CF-48C3-939E-BE2D-3280A5518A8D";
+	setAttr ".splck" 1;
+	setAttr ".minsp" -1;
+	setAttr ".maxsp" 1;
+	setAttr ".fil" 1;
+	setAttr ".rflr" 2;
+	setAttr ".rfrr" 2;
+	setAttr ".maxr" 4;
+	setAttr ".shrd" 2;
+	setAttr ".fg" 1;
+createNode mentalrayOptions -s -n "Production";
+	rename -uid "83A6F247-4799-D68F-232B-F09C1FD856D5";
+	setAttr ".splck" 1;
+	setAttr ".minsp" 0;
+	setAttr ".maxsp" 2;
+	setAttr ".rflr" 10;
+	setAttr ".rfrr" 10;
+	setAttr ".maxr" 20;
+	setAttr ".shrd" 2;
+createNode mentalrayOptions -s -n "ProductionMotionblur";
+	rename -uid "C4EFC56D-4F5D-C5BA-4E39-56818EF7EBEC";
+	setAttr ".splck" 1;
+	setAttr ".minsp" 0;
+	setAttr ".maxsp" 2;
+	setAttr ".rflr" 10;
+	setAttr ".rfrr" 10;
+	setAttr ".maxr" 20;
+	setAttr ".shrd" 2;
+	setAttr ".mb" 2;
+createNode mentalrayOptions -s -n "ProductionRapidMotion";
+	rename -uid "6CA1E819-41C8-A1C1-05A7-D9B13044A5BD";
+	setAttr ".splck" 1;
+	setAttr ".minsp" 0;
+	setAttr ".maxsp" 2;
+	setAttr ".scan" 3;
+	setAttr ".rapc" 8;
+	setAttr ".raps" 2;
+	setAttr ".rflr" 10;
+	setAttr ".rfrr" 10;
+	setAttr ".maxr" 20;
+	setAttr ".shrd" 2;
+	setAttr ".mb" 2;
+createNode mentalrayOptions -s -n "ProductionFineTrace";
+	rename -uid "8E09275F-4B57-21E8-B903-70ACFFFE617D";
+	setAttr ".conr" 0.019999999552965164;
+	setAttr ".cong" 0.019999999552965164;
+	setAttr ".conb" 0.019999999552965164;
+	setAttr ".splck" 1;
+	setAttr ".minsp" 1;
+	setAttr ".maxsp" 2;
+	setAttr ".fil" 1;
+	setAttr ".filw" 0.75;
+	setAttr ".filh" 0.75;
+	setAttr ".jit" 1;
+	setAttr ".rflr" 1;
+	setAttr ".rfrr" 1;
+	setAttr ".maxr" 1;
+	setAttr ".shrd" 2;
+createNode mentalrayOptions -s -n "ProductionRapidFur";
+	rename -uid "2D57DD50-4F9E-1E93-4C11-87AF7D2DBF95";
+	setAttr ".conr" 0.039999999105930328;
+	setAttr ".cong" 0.029999999329447746;
+	setAttr ".conb" 0.070000000298023224;
+	setAttr ".splck" 1;
+	setAttr ".minsp" 0;
+	setAttr ".maxsp" 2;
+	setAttr ".fil" 1;
+	setAttr ".filw" 1.1449999809265137;
+	setAttr ".filh" 1.1449999809265137;
+	setAttr ".jit" 1;
+	setAttr ".scan" 3;
+	setAttr ".rapc" 3;
+	setAttr ".raps" 0.25;
+	setAttr ".ray" 0;
+	setAttr ".rflr" 1;
+	setAttr ".rfrr" 1;
+	setAttr ".maxr" 1;
+	setAttr ".shrd" 2;
+	setAttr ".shmth" 3;
+	setAttr ".shmap" 3;
+	setAttr ".mbsm" 0;
+	setAttr ".bism" 0.019999999552965164;
+createNode mentalrayOptions -s -n "ProductionRapidHair";
+	rename -uid "43E6BA6F-4F60-B6F4-F559-C497B6F3BA7A";
+	setAttr ".conr" 0.039999999105930328;
+	setAttr ".cong" 0.029999999329447746;
+	setAttr ".conb" 0.070000000298023224;
+	setAttr ".splck" 1;
+	setAttr ".minsp" 0;
+	setAttr ".maxsp" 2;
+	setAttr ".fil" 1;
+	setAttr ".filw" 1.1449999809265137;
+	setAttr ".filh" 1.1449999809265137;
+	setAttr ".jit" 1;
+	setAttr ".scan" 3;
+	setAttr ".rapc" 6;
+	setAttr ".ray" 0;
+	setAttr ".rflr" 1;
+	setAttr ".rfrr" 1;
+	setAttr ".maxr" 1;
+	setAttr ".shrd" 2;
+	setAttr ".shmth" 3;
+	setAttr ".shmap" 3;
+	setAttr ".mbsm" 0;
+	setAttr ".bism" 0.019999999552965164;
+createNode mentalrayOptions -s -n "PreviewImrRayTracyOff";
+	rename -uid "D064E646-4B2F-98A0-2466-1FAF4A1CA0E8";
+	setAttr ".minsp" 0;
+	setAttr ".fil" 1;
+	setAttr ".ray" 0;
+	setAttr ".rflr" 1;
+	setAttr ".rfrr" 1;
+	setAttr ".maxr" 1;
+	setAttr ".shrd" 2;
+createNode mentalrayOptions -s -n "PreviewImrRayTracyOn";
+	rename -uid "49A9C1E5-43EF-B814-D2C1-ECABB4B0CF66";
+	setAttr ".minsp" 0;
+	setAttr ".fil" 1;
+	setAttr ".rflr" 1;
+	setAttr ".rfrr" 2;
+	setAttr ".maxr" 3;
+	setAttr ".shrd" 1;
 select -ne :time1;
 	setAttr ".o" 94;
 	setAttr ".unw" 94;
@@ -2400,21 +2742,21 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
-	setAttr -s 4 ".sol";
+	setAttr -s 2 ".sol";
 connectAttr "stw_neck_ctrl_translateX.o" "stewart_shot_ready_animRN.phl[1]";
 connectAttr "stw_neck_ctrl_translateY.o" "stewart_shot_ready_animRN.phl[2]";
 connectAttr "stw_neck_ctrl_translateZ.o" "stewart_shot_ready_animRN.phl[3]";
-connectAttr "stw_neck_ctrl_rotateZ.o" "stewart_shot_ready_animRN.phl[4]";
-connectAttr "stw_neck_ctrl_rotateX.o" "stewart_shot_ready_animRN.phl[5]";
-connectAttr "stw_neck_ctrl_rotateY.o" "stewart_shot_ready_animRN.phl[6]";
+connectAttr "stw_neck_ctrl_rotateX.o" "stewart_shot_ready_animRN.phl[4]";
+connectAttr "stw_neck_ctrl_rotateY.o" "stewart_shot_ready_animRN.phl[5]";
+connectAttr "stw_neck_ctrl_rotateZ.o" "stewart_shot_ready_animRN.phl[6]";
 connectAttr "stw_neck_ctrl_followAlign.o" "stewart_shot_ready_animRN.phl[7]";
 connectAttr "stw_head_ctrl_followAlign.o" "stewart_shot_ready_animRN.phl[8]";
-connectAttr "stw_head_ctrl_translateX.o" "stewart_shot_ready_animRN.phl[9]";
-connectAttr "stw_head_ctrl_translateY.o" "stewart_shot_ready_animRN.phl[10]";
-connectAttr "stw_head_ctrl_translateZ.o" "stewart_shot_ready_animRN.phl[11]";
-connectAttr "stw_head_ctrl_rotateZ.o" "stewart_shot_ready_animRN.phl[12]";
-connectAttr "stw_head_ctrl_rotateX.o" "stewart_shot_ready_animRN.phl[13]";
-connectAttr "stw_head_ctrl_rotateY.o" "stewart_shot_ready_animRN.phl[14]";
+connectAttr "stw_head_ctrl_rotateX.o" "stewart_shot_ready_animRN.phl[9]";
+connectAttr "stw_head_ctrl_rotateY.o" "stewart_shot_ready_animRN.phl[10]";
+connectAttr "stw_head_ctrl_rotateZ.o" "stewart_shot_ready_animRN.phl[11]";
+connectAttr "stw_head_ctrl_translateX.o" "stewart_shot_ready_animRN.phl[12]";
+connectAttr "stw_head_ctrl_translateY.o" "stewart_shot_ready_animRN.phl[13]";
+connectAttr "stw_head_ctrl_translateZ.o" "stewart_shot_ready_animRN.phl[14]";
 connectAttr "stw_lf_knee_pv_ctrl_space.o" "stewart_shot_ready_animRN.phl[15]";
 connectAttr "stw_lf_knee_pv_ctrl_translateX.o" "stewart_shot_ready_animRN.phl[16]"
 		;
@@ -2443,8 +2785,8 @@ connectAttr "stw_lf_foot_ik_ctrl_translateY.o" "stewart_shot_ready_animRN.phl[30
 		;
 connectAttr "stw_lf_foot_ik_ctrl_translateZ.o" "stewart_shot_ready_animRN.phl[31]"
 		;
-connectAttr "stw_lf_foot_ik_ctrl_rotateY.o" "stewart_shot_ready_animRN.phl[32]";
-connectAttr "stw_lf_foot_ik_ctrl_rotateX.o" "stewart_shot_ready_animRN.phl[33]";
+connectAttr "stw_lf_foot_ik_ctrl_rotateX.o" "stewart_shot_ready_animRN.phl[32]";
+connectAttr "stw_lf_foot_ik_ctrl_rotateY.o" "stewart_shot_ready_animRN.phl[33]";
 connectAttr "stw_lf_foot_ik_ctrl_rotateZ.o" "stewart_shot_ready_animRN.phl[34]";
 connectAttr "stw_lf_foot_ik_ctrl_pvControl.o" "stewart_shot_ready_animRN.phl[35]"
 		;
@@ -2491,12 +2833,12 @@ connectAttr "stw_rt_foot_ik_ctrl_outerToe.o" "stewart_shot_ready_animRN.phl[59]"
 		;
 connectAttr "stw_rt_foot_ik_ctrl_translateX.o" "stewart_shot_ready_animRN.phl[60]"
 		;
-connectAttr "stw_rt_foot_ik_ctrl_translateZ.o" "stewart_shot_ready_animRN.phl[61]"
+connectAttr "stw_rt_foot_ik_ctrl_translateY.o" "stewart_shot_ready_animRN.phl[61]"
 		;
-connectAttr "stw_rt_foot_ik_ctrl_translateY.o" "stewart_shot_ready_animRN.phl[62]"
+connectAttr "stw_rt_foot_ik_ctrl_translateZ.o" "stewart_shot_ready_animRN.phl[62]"
 		;
-connectAttr "stw_rt_foot_ik_ctrl_rotateY.o" "stewart_shot_ready_animRN.phl[63]";
-connectAttr "stw_rt_foot_ik_ctrl_rotateX.o" "stewart_shot_ready_animRN.phl[64]";
+connectAttr "stw_rt_foot_ik_ctrl_rotateX.o" "stewart_shot_ready_animRN.phl[63]";
+connectAttr "stw_rt_foot_ik_ctrl_rotateY.o" "stewart_shot_ready_animRN.phl[64]";
 connectAttr "stw_rt_foot_ik_ctrl_rotateZ.o" "stewart_shot_ready_animRN.phl[65]";
 connectAttr "stw_rt_foot_ik_ctrl_pvControl.o" "stewart_shot_ready_animRN.phl[66]"
 		;
@@ -2554,11 +2896,11 @@ connectAttr "stw_lf_arm_ik_ctrl_stretchyArm.o" "stewart_shot_ready_animRN.phl[94
 		;
 connectAttr "stw_lf_arm_ik_ctrl_maxStretch.o" "stewart_shot_ready_animRN.phl[95]"
 		;
-connectAttr "stw_lf_arm_ik_ctrl_translateZ.o" "stewart_shot_ready_animRN.phl[96]"
+connectAttr "stw_lf_arm_ik_ctrl_translateX.o" "stewart_shot_ready_animRN.phl[96]"
 		;
 connectAttr "stw_lf_arm_ik_ctrl_translateY.o" "stewart_shot_ready_animRN.phl[97]"
 		;
-connectAttr "stw_lf_arm_ik_ctrl_translateX.o" "stewart_shot_ready_animRN.phl[98]"
+connectAttr "stw_lf_arm_ik_ctrl_translateZ.o" "stewart_shot_ready_animRN.phl[98]"
 		;
 connectAttr "stw_lf_arm_ik_ctrl_rotateX.o" "stewart_shot_ready_animRN.phl[99]";
 connectAttr "stw_lf_arm_ik_ctrl_rotateY.o" "stewart_shot_ready_animRN.phl[100]";
@@ -2576,9 +2918,9 @@ connectAttr "stw_rt_clavicle_ctrl_rotateY.o" "stewart_shot_ready_animRN.phl[106]
 connectAttr "stw_rt_clavicle_ctrl_rotateZ.o" "stewart_shot_ready_animRN.phl[107]"
 		;
 connectAttr "stw_rt_elbow_pv_ctrl_space.o" "stewart_shot_ready_animRN.phl[108]";
-connectAttr "stw_rt_elbow_pv_ctrl_translateY.o" "stewart_shot_ready_animRN.phl[109]"
+connectAttr "stw_rt_elbow_pv_ctrl_translateX.o" "stewart_shot_ready_animRN.phl[109]"
 		;
-connectAttr "stw_rt_elbow_pv_ctrl_translateX.o" "stewart_shot_ready_animRN.phl[110]"
+connectAttr "stw_rt_elbow_pv_ctrl_translateY.o" "stewart_shot_ready_animRN.phl[110]"
 		;
 connectAttr "stw_rt_elbow_pv_ctrl_translateZ.o" "stewart_shot_ready_animRN.phl[111]"
 		;
@@ -2766,12 +3108,12 @@ connectAttr "stw_spine_ik_shoulder_ctrl_rotateZ.o" "stewart_shot_ready_animRN.ph
 		;
 connectAttr "stw_COG_ctrl_squashStretch.o" "stewart_shot_ready_animRN.phl[205]";
 connectAttr "stw_COG_ctrl_breath.o" "stewart_shot_ready_animRN.phl[206]";
-connectAttr "stw_COG_ctrl_rotateX.o" "stewart_shot_ready_animRN.phl[207]";
-connectAttr "stw_COG_ctrl_rotateY.o" "stewart_shot_ready_animRN.phl[208]";
-connectAttr "stw_COG_ctrl_rotateZ.o" "stewart_shot_ready_animRN.phl[209]";
-connectAttr "stw_COG_ctrl_translateX.o" "stewart_shot_ready_animRN.phl[210]";
-connectAttr "stw_COG_ctrl_translateY.o" "stewart_shot_ready_animRN.phl[211]";
-connectAttr "stw_COG_ctrl_translateZ.o" "stewart_shot_ready_animRN.phl[212]";
+connectAttr "stw_COG_ctrl_translateX.o" "stewart_shot_ready_animRN.phl[207]";
+connectAttr "stw_COG_ctrl_translateY.o" "stewart_shot_ready_animRN.phl[208]";
+connectAttr "stw_COG_ctrl_translateZ.o" "stewart_shot_ready_animRN.phl[209]";
+connectAttr "stw_COG_ctrl_rotateX.o" "stewart_shot_ready_animRN.phl[210]";
+connectAttr "stw_COG_ctrl_rotateY.o" "stewart_shot_ready_animRN.phl[211]";
+connectAttr "stw_COG_ctrl_rotateZ.o" "stewart_shot_ready_animRN.phl[212]";
 connectAttr "stw_hair_mid_2_ctrl_translateX.o" "stewart_shot_ready_animRN.phl[213]"
 		;
 connectAttr "stw_hair_mid_2_ctrl_translateY.o" "stewart_shot_ready_animRN.phl[214]"
