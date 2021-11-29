@@ -1,6 +1,6 @@
 //Maya ASCII 2022 scene
-//Name: WALKING.ma
-//Last modified: Mon, Nov 29, 2021 04:49:44 PM
+//Name: WALKING_SPLINE.ma
+//Last modified: Mon, Nov 29, 2021 04:50:29 PM
 //Codeset: 1252
 file -rdi 1 -ns "stewart_shot_ready_anim" -rfn "stewart_shot_ready_animRN" -op
 		 "v=0;" -typ "mayaAscii" "D:/GitHubProjects/3D_Animation_Folder/3d_animations/assets/stewart_v04/stewart_shot_ready_anim.ma";
@@ -15,18 +15,18 @@ fileInfo "product" "Maya 2022";
 fileInfo "version" "2022";
 fileInfo "cutIdentifier" "202108111415-612a77abf4";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19043)";
-fileInfo "UUID" "5036D471-4F3F-83C6-6853-629407CB3D18";
+fileInfo "UUID" "50C2B2DC-4CAC-A535-30FD-229AD1AF74E2";
 createNode transform -s -n "persp";
 	rename -uid "F60A6D65-432E-CCAD-0F7B-2399D54F0970";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 117.07649742870549 85.879791795211347 417.22710296035677 ;
-	setAttr ".r" -type "double3" 3.0000000000000888 16.000000000000057 0 ;
+	setAttr ".t" -type "double3" 241.17839955715675 75.933464605381772 459.25180877141418 ;
+	setAttr ".r" -type "double3" 3.5999999999999668 28.000000000000153 -2.2513756105027505e-16 ;
 	setAttr ".rpt" -type "double3" -1.8504542228070526e-14 -5.293907211225354e-15 -7.7523062842018706e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "7143DC4F-4D60-0F9F-F694-4AB64422A143";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 432.72877529636213;
+	setAttr ".coi" 519.08475488226463;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -1861,8 +1861,8 @@ createNode animCurveTU -n "stw_hair_back_1_ctrl_scaleZ";
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  1 1 5 1 10 1 16 1 25 1 35 1 40 1;
 select -ne :time1;
-	setAttr ".o" 3;
-	setAttr ".unw" 3;
+	setAttr ".o" 1;
+	setAttr ".unw" 1;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -2160,4 +2160,4 @@ relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":default
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-// End of WALKING.ma
+// End of WALKING_SPLINE.ma
